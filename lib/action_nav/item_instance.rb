@@ -1,4 +1,4 @@
-require 'active_support/inflector/inflections'
+require 'active_support/inflector/methods'
 
 module ActionNav
   class ItemInstance
@@ -32,7 +32,7 @@ module ActionNav
     end
 
     def title
-      cache(:title) { parse(@item.title, @item.id.to_s.humanize) }
+      cache(:title) { parse(@item.title, ActiveSupport::Inflector.humanize(@item.id.to_s)) }
     end
 
     def description
