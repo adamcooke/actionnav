@@ -9,16 +9,16 @@ ActionNav allows you to define your navigation centrally and use it throughout y
 Install in the usual way.
 
 ```ruby
-gem "activenav", "~> 1.0.0"
+gem "actionnav", "~> 1.0.0"
 ```
 
 ## Getting started
 
-To begin, you need to define a set of navigation. You can add as many sets as needed by your application. Convention dictates these must be named with a prefix followed by `Navigation`. The best place to put these is in `app/navigation`.
+To begin, you need to define a set of navigation items. These can be thought of (and usally will be displayed as) menu items. You can add as many sets as needed by your application. Convention dictates these must be named with a prefix followed by `Navigation`. The best place to put these is in `app/navigation`.
 
 ### Defining navigation
 
-Add a file into `app/navigation` called `main_navigation.rb` and add a `MainNavigation` class which lists your navigation items.
+Add a file into `app/navigation` called `main_navigation.rb` and add a `MainNavigation` class which lists your navigation items. As usually, be sure to follow the conventions (a `XyzNavigation class has to be defined in a file named `xyz_navigation`).
 
 ```ruby
 class MainNavigation < ActionNav::Base
@@ -57,14 +57,14 @@ end
 
 When defining an item you have access to the following options:
 
-* `title` - a title for the navigation item. If not provided, ActiveNav will present a humanized version of the ID.
+* `title` - a title for the navigation item. If not provided, ActionNav will present a humanized version of the ID.
 * `description` - a description for the navigation item. Optional, you may not need this if your navigation doesn't need it.
 * `url` - the URL that the item should point to
 * `icon` - a path to an icon to display with the item
 
 All of these items accept a string or a proc. If you provide a proc, it will be evaluated in the context of your ApplicationController so you can access things like `current_user` and any `_path` route methods.
 
-If you provide a proc, ActiveNav will ensure this is called appropriate whenever you may need it in a view so you don't need to worry about that.
+If you provide a proc, ActionNav will ensure this is called appropriate whenever you may need it in a view so you don't need to worry about that.
 
 In addition to these, you can define a `hide_unless` block which allows you to hide navigation items in certain circumstances.
 
