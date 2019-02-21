@@ -74,7 +74,7 @@ ActionNav does not care how you actually display its navigation, that's up to yo
 
 ```erb
 <ul>
-  <% for item in navigation[:main].items %>
+  <% navigation[:main].items.each do |item| %>
   <li>
     <%= link_to item.title, item.url, :class => (item.active? ? "is-active" : "is-inactive") %>
   </li>
