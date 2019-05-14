@@ -1,20 +1,20 @@
 PATH
   remote: .
   specs:
-    actionnav (1.0.0)
+    actionnav (1.0.2)
       activesupport
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.1.1)
+    activesupport (5.2.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    concurrent-ruby (1.1.3)
+    concurrent-ruby (1.1.5)
     diff-lcs (1.3)
-    i18n (1.1.1)
+    i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     rspec (3.8.0)
@@ -45,4 +45,4 @@ DEPENDENCIES
   rspec-mocks
 
 BUNDLED WITH
-   1.16.1
+   1.17.2
