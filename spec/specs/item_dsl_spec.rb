@@ -70,4 +70,14 @@ describe ActionNav::ItemDSL do
     expect(item.children[:level2].title).to eq "Some level 2 title"
   end
 
+  it "should be able to define a count block" do
+    block = proc { 123 }
+    item.dsl do
+      item :messages do
+        count(&block)
+      end
+    end
+    expect(item.children[:messages].count).to eq block
+  end
+
 end

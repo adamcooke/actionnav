@@ -16,6 +16,7 @@ module ActionNav
     attr_accessor :description
     attr_accessor :icon
     attr_accessor :hide_unless
+    attr_accessor :count
 
     def path
       @parent ? [@parent.path, id].flatten : [id]

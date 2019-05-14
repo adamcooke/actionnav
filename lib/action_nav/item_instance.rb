@@ -65,6 +65,10 @@ module ActionNav
       end
     end
 
+    def count
+      @item.count ? @count ||= @item.count.call : nil
+    end
+
     private
 
     def parse(item, default = nil)

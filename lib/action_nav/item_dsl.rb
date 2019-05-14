@@ -31,5 +31,13 @@ module ActionNav
       child
     end
 
+    def count(&block)
+      if block_given?
+        @item.count = block
+      else
+        raise ArgumentError, "Block must be provided to `count`"
+      end
+    end
+
   end
 end

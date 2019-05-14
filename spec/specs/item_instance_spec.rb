@@ -158,4 +158,22 @@ describe ActionNav::ItemInstance do
     end
   end
 
+  context "count" do
+    it "should return the count for an item" do
+      item.count = proc { 1234 }
+      expect(instance.count).to eq 1234
+    end
+
+    it "should only execute the block once" do
+      executions = 0
+      item.count = proc { executions += 1; 1234 }
+      3.times { instance.count }
+      expect(executions).to eq 1
+    end
+
+    it "should return nil if there's no block configured" do
+      expect(instance.count).to be nil
+    end
+  end
+
 end
