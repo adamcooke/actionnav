@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/adamcooke/actionnav/compare/v1.0.2...v1.0.3) (2024-05-10)
+
+
+### Miscellaneous Chores
+
+* update version file correctly ([bcbfc7f](https://github.com/adamcooke/actionnav/commit/bcbfc7f8ef1ef129d456d83dd7c3af8114b9dbb0))
+
 ## [1.0.2](https://github.com/adamcooke/actionnav/compare/v1.0.1...v1.0.2) (2024-05-10)
 
 
