@@ -8,6 +8,9 @@
       "bump-patch-for-minor-pre-major": true,
       "draft": false,
       "prerelease": false,
+      "extra-files": [
+        "lib/action_nav/version.rb"
+      ],
       "changelog-sections": [
         {
           "type": "feat",
