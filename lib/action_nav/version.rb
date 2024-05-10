@@ -1,3 +1,3 @@
 module ActionNav
-  VERSION = "1.0.2" # x-release-please-version
+  VERSION = "1.0.3" # x-release-please-version
 end
