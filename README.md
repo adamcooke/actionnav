@@ -25,13 +25,12 @@ class MainNavigation < ActionNav::Base
 
   item :dashboard do
     title "Dashboard"
-    icon "icons/dashboard.svg"
     url { root_path }
+    meta { { icon: 'path/to/icon.svg', count: 123, divider_after: true } }
   end
 
   item :new_post do
     title "Add new post"
-    icon "icons/add.svg"
     url { new_post_path }
     hide_unless { current_user.can?("posts.create") }
   end
@@ -60,7 +59,7 @@ When defining an item you have access to the following options:
 * `title` - a title for the navigation item. If not provided, ActionNav will present a humanized version of the ID.
 * `description` - a description for the navigation item. Optional, you may not need this if your navigation doesn't need it.
 * `url` - the URL that the item should point to
-* `icon` - a path to an icon to display with the item
+* `meta` - additional information about the navigation item
 
 All of these items accept a string or a proc. If you provide a proc, it will be evaluated in the context of your ApplicationController so you can access things like `current_user` and any `_path` route methods.
 

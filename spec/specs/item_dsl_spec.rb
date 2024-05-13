@@ -47,6 +47,20 @@ describe ActionNav::ItemDSL do
     expect(item.icon).to be_a Proc
   end
 
+  it "should be able to set metas" do
+    item.dsl do
+      meta hello: 'world'
+    end
+    expect(item.meta).to eq({ hello: 'world' })
+  end
+
+  it "should be able to set metas to procs" do
+    item.dsl do
+      meta { { hello: 'world' } }
+    end
+    expect(item.meta).to be_a Proc
+  end
+
   it "should be able to set urls" do
     item.dsl do
       url "/blah"

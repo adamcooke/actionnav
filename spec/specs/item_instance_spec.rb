@@ -100,6 +100,22 @@ describe ActionNav::ItemInstance do
     end
   end
 
+  context "#meta" do
+    it "should return strings" do
+      item.meta = { hello: 'world' }
+      expect(instance.meta).to eq({ hello: 'world' })
+    end
+
+    it "should call procs in controller instance" do
+      item.meta = proc { { hello: 'world' } }
+      expect(instance.meta).to eq({ hello: 'world' })
+    end
+
+    it "should return an empty hash if there's no meta" do
+      expect(instance.meta).to eq({})
+    end
+  end
+
   context "#title" do
     it "should return strings" do
       item.title = "Dashboard"

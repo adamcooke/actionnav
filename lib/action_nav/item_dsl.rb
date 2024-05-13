@@ -21,6 +21,10 @@ module ActionNav
       @item.icon = block_given? ? block : icon
     end
 
+    def meta(meta = {}, &block)
+      @item.meta = block_given? ? block : meta
+    end
+
     def hide_unless(&block)
       @item.hide_unless = block
     end

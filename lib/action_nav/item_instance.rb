@@ -47,6 +47,10 @@ module ActionNav
       cache(:url) { parse(@item.url, "/")}
     end
 
+    def meta
+      cache(:meta) { parse(@item.meta, {}) }
+    end
+
     def icon
       cache(:icon) { parse(@item.icon) }
     end
@@ -74,6 +78,8 @@ module ActionNav
     def parse(item, default = nil)
       if item.is_a?(Proc)
         @base.controller.instance_eval(&item)
+      elsif item.is_a?(Hash)
+        item
       elsif item
         item.to_s
       else

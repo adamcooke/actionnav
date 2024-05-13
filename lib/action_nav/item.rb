@@ -15,6 +15,7 @@ module ActionNav
     attr_accessor :url
     attr_accessor :description
     attr_accessor :icon
+    attr_accessor :meta
     attr_accessor :hide_unless
     attr_accessor :count
 
