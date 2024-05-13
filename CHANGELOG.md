@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/adamcooke/actionnav/compare/v1.0.3...v1.1.0) (2024-05-13)
+
+
+### Features
+
+* add item meta data to ultimately replace icon & count ([5453002](https://github.com/adamcooke/actionnav/commit/54530024af4088424dda320f1362166eaee753ee))
+
 ## [1.0.3](https://github.com/adamcooke/actionnav/compare/v1.0.2...v1.0.3) (2024-05-10)
 
 
