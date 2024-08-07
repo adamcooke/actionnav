@@ -71,6 +71,19 @@ describe ActionNav::ItemInstance do
     it "should reutrn the root if NO url is given" do
       expect(instance.url).to eq "/"
     end
+
+    it "should cache the result" do
+      executions = 0
+      item.url = proc { executions += 1; "/some/path" }
+      3.times { instance.url }
+      expect(executions).to eq 1
+    end
+
+    it "should be able to use the context" do
+      nav.add_context(:hello, "world")
+      item.url = proc { |c| "/some/path/#{c[:hello]}" }
+      expect(instance.url).to eq "/some/path/world"
+    end
   end
 
   context "#icon?" do

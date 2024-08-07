@@ -12,6 +12,7 @@ module ActionNav
     def initialize(controller)
       @controller = controller
       @active_paths = []
+      @context = {}
     end
 
     # The controller that initialized this navigation.
@@ -19,6 +20,11 @@ module ActionNav
     # @return [ActionController::Base]
     attr_reader :controller
     attr_reader :active_paths
+
+    # The context for this navigation.
+    # 
+    # @return [Hash]
+    attr_reader :context
 
     # Return a full list of items for this instance as
     # instances.
@@ -48,6 +54,15 @@ module ActionNav
         a = path.size.times.map { |i| path[0, path.size - i] }
         a.include?(parts)
       end
+    end
+
+    # Add context to this navigation.
+    # 
+    # @param key [Symbol]
+    # @param value [Object]
+    # @return [Hash]
+    def add_context(key, value)
+      @context[key] = value
     end
 
     # Add a new item to this navigation

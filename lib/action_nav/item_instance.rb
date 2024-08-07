@@ -77,7 +77,7 @@ module ActionNav
 
     def parse(item, default = nil)
       if item.is_a?(Proc)
-        @base.controller.instance_eval(&item)
+        @base.controller.instance_exec(@base.context, &item)
       elsif item.is_a?(Hash)
         item
       elsif item

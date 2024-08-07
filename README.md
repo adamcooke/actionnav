@@ -83,6 +83,22 @@ ActionNav does not care how you actually display its navigation, that's up to yo
 
 The `navigation[:main]` method allows you to access your navigation and will automatically provide you with items that have computed URLs. If an item has been "hidden" then it will NOT be returned in these methods.
 
+If you need to pass additional context to URLs, you can pass values as follows:
+
+```ruby
+# In the navigation 
+item :general do
+  title "General settings"
+  url { |ctx| account_path(ctx[:account]) }
+end
+
+# Ensure that context is added to your navigation before you 
+# render it.
+before_action do
+  navigation[:main].add_context :account, current_account
+end
+```
+
 ### Activating navigation items
 
 To activate navigation items, you can simply call the following from a controller or a view.
