@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/adamcooke/actionnav/compare/v1.1.0...v1.2.0) (2024-08-07)
+
+
+### Features
+
+* navigation-level context ([c18607a](https://github.com/adamcooke/actionnav/commit/c18607a76d7b822cb0dd90ed7425978a279eede3))
+
 ## [1.1.0](https://github.com/adamcooke/actionnav/compare/v1.0.3...v1.1.0) (2024-05-13)
 
 
